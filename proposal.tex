@@ -4,6 +4,7 @@
 \usepackage{fullpage}
 \usepackage{hyperref}
 \usepackage{amsthm}
+\usepackage[capitalise]{cleveref}
 \usepackage[numbers,sort&compress]{natbib}
 
 \theoremstyle{definition}
@@ -19,37 +20,61 @@
 
 \section{Activity Overview}
 
-Briefly describe what this activity is about, and \emph{why} you are
-proposing this activity. (활동에 대한 간략한 설명과 왜 이 활동을
-제안하는지에 대한 이유를 서술.)
+좋은 엔지니어들의 특징 중 하나는 자신만의 개발 환경을 가지고 있으며
+어디서나 구축하여 사용할 수 있다는 점이다. 또한 에디터의 사용 숙련도
+또한 높아야 한다. VIM을 에디터로 사용하는 유저가 VIM의 유용한 단축키나
+설정을 사용하지 않는 것은 syntax highlight 기능이 있는 윈도우 메모장을
+사용하는 것과 크게 다름이 없다. 좋은 도구를 사용하는 것도 중요하지만
+좋은 도구를 효율적으로 사용하는 것 역시 중요하다. 따라서 이 Activity
+에서는 자신만의 환경 구축과 이 환경을 이식하기 편하게 세팅하는 연습을 하고,
+사용하는 에디터의 숙련도를 높이는 것을 목표로 한다.
+
 
 \section{Exercises}
 
-Describe a series of exercises that students will carry out. (학생들이 하게
-될 연습문제를 순차적으로 서술.)
+\begin{exercise} \label{ex:mkset}
 
-\begin{exercise}
-
-  In this exercise, you do ...
-
-\end{exercise}
-
-\begin{exercise}
-
-  In this exercise, you do ...
+  자신이 개발할 때 사용하는 개발환경을 정리한다. 에디터 이외에 자주 사용하는
+  프로그램이나(tmux, screen 등) 설정파일등을 꾸미고 적용해본다. 에디터의
+  경우에는 다양한 플러그인이 존재하는데 살펴보고 자신의 에디터에 적용해본다.
 
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{ex:dotfiles}
 
-  In this exercise, you do ...
+  \cref{ex:mkset} 에서 만든 개발 환경설정들은, 작업하는 머신이 바뀌더라도
+  금방 적용하여 사용할 수 있어야 한다. GitHub 에는 많은 사용자들이 이미
+  자신의 환경설정을 만들어 공유하고 있다.\cite{dotfiles} 참고하여 직접 만들어
+  Activity의 repository에 올려 공유한다.
+
+\end{exercise}
+
+\begin{exercise} \label{ex:adven}
+
+  이미 많은 웹페이지들이 여러가지 종류의 에디터들의 멋지고 효과적인
+  단축키에 대해서 잘 설명하고 있다.\cite{usefulVIM} 좋은 정보들이 많지만
+  잘 사용하게 되지 않는 이유는 익숙함에서 탈피하는 일이 어렵기 때문이다.
+  알고 있는 것만으로 충분히 할 수 있다는 생각과 더 배우는 것이 귀찮다는 생각이
+  더 숙련된 에디터 유저가 되는 것의 허들이 된다. 따라서 VIM adventures
+  \cite{vimAdventures} 와 같은 방식은 이런 허들을 내리는 목적에 아주 효과적이다.
+  (하지만 Emacs 버전은 존재하지 않는 듯 하다) level 이 올라갈수록 더 다양한
+  단축키를 배우게 되는데, 특정 레벨까지 클리어 하고 인증하는 것이 \cref{ex:adven}
+  의 목표이다.
 
 \end{exercise}
 
 \section{Expected Solutions}
 
-Put expected solutions here.
-(예상되는 답안에 대해서 서술.)
+\cref{ex:mkset}, \cref{ex:dotfiles} 의 결과물은, repository 하나와
+자신의 개발환경을 설명하는 tex파일 하나가 될 것이다. \cref{ex:adven}
+에서는 각 level 별 어떤 키워드를 사용하여 clear를 할 수 있는지에 대한
+간략한 설명과 clear 인증 스크린 샷이 하나 포함된 tex 파일 하나가 될 것이다.
+
+\cref{ex:adven}을 제외한 과제들은 개인의 개발환경과 관련된 것이기 때문에
+쉽사리 평가하기 어려운 부분이 있다(무엇이 편한지는 주관적이기 때문에).
+따라서 자신의 환경설정에 대한 설명이 잘 되어 있는지에 대한 여부와
+남들도 쉽게 그 환경설정을 사용할 수 있도록 잘 설계되어 있는지 여부만
+(`./install.sh` 스크립트의 존재 유무 등) 확인하는 것이 바람직할 것이다.
 
 \bibliography{references}
 \bibliographystyle{plainnat}
